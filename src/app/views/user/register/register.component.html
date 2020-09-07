@@ -1,0 +1,147 @@
+<div class="card auth-card">
+  <div class="position-relative image-side p-md-5">
+    <p class="text-white h2">MAGIC IS IN THE DETAILS</p>
+    <p class="white mb-0">
+      Please use the form to register.
+      <br />If you are a member, please
+      <a routerLink="/user/login" class="white white-underline-link">login</a>.
+    </p>
+  </div>
+  <div class="form-side p-md-5">
+    <a class="c-pointer">
+      <span class="logo-single"></span>
+    </a>
+    <h6 class="mb-4">Register</h6>
+
+    <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          ngModel
+          #firstname="ngModel"
+          name="firstname"
+          pattern="[A-Za-z]+"
+        />
+        <span>First Name</span>
+        <div
+          *ngIf="!firstname.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          First Name is required!
+        </div>
+        <div *ngIf="firstname?.errors?.pattern" class="invalid-tooltip">
+          First Name should not be number.
+        </div>
+      </label>
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          ngModel
+          #lastname="ngModel"
+          name="lastname"
+        />
+        <span>Last Name</span>
+        <div
+          *ngIf="!lastname.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Last Name is required!
+        </div>
+        <div *ngIf="lastname?.errors?.pattern" class="invalid-tooltip">
+          Last Name should not be number.
+        </div>
+      </label>
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          email
+          ngModel
+          #email="ngModel"
+          name="email"
+        />
+        <span>Email</span>
+        <div
+          *ngIf="!email.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Email is required!
+        </div>
+        <div
+          *ngIf="email?.errors?.email && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Email must be a valid address!
+        </div>
+      </label>
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          ngModel
+          #mobile="ngModel"
+          name="mobile"
+          pattern="[0-9]{10}"
+        />
+        <span>Mobile</span>
+        <div
+          *ngIf="!mobile.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Mobile is required!
+        </div>
+        <div *ngIf="mobile?.errors?.pattern" class="invalid-tooltip">
+          Mobile should be 10 digits.
+        </div>
+      </label>
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          ngModel
+          #subdomain="ngModel"
+          name="subdomain"
+        />
+        <span>Subdomain</span>
+        <div
+          *ngIf="!subdomain.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Subdomain is required!
+        </div>
+      </label>
+      <label class="form-group has-float-label">
+        <input
+          class="form-control"
+          required
+          ngModel
+          #company="ngModel"
+          name="company"
+        />
+        <span>Company</span>
+        <div
+          *ngIf="!company.valid && registerForm.submitted"
+          class="invalid-tooltip"
+        >
+          Company is required!
+        </div>
+      </label>
+      <div class="d-flex justify-content-between align-items-center">
+        <a routerLink="/user/forgot-password"
+          >{{ "user.forgot-password" | translate }}?</a
+        >
+        <app-state-button
+          [btnClass]="'btn btn-primary btn-lg btn-shadow'"
+          [currentState]="buttonState"
+          [isDisabled]="!registerForm.valid"
+          click="onLoginClick()"
+        >
+          {{ "user.register-button" | translate | uppercase }}
+        </app-state-button>
+      </div>
+    </form>
+  </div>
+</div>
+<simple-notifications></simple-notifications>

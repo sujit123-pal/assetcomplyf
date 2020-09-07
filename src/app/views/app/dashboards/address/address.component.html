@@ -1,0 +1,148 @@
+<div class="row">
+  <div class="col-12">
+    <app-heading></app-heading>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="separator mb-5"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-body">
+        <!--<h5 class="mb-4">{{ 'forms.basic' | translate }}</h5>-->
+        <h5 class="mb-4">Address</h5>
+        <form
+          #form="ngForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+          class="tooltip-label-right"
+        >
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Parent Location Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="parentlocationname"
+                  ngModel
+                  required
+                  #parentlocationname="ngModel"
+                />
+                <div
+                  *ngIf="!parentlocationname.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Parent Location Name is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Location</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="location"
+                  ngModel
+                  required
+                  #location="ngModel"
+                />
+                <div
+                  *ngIf="!location.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Location is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Location Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="locationcode"
+                  ngModel
+                  required
+                  #locationcode="ngModel"
+                />
+                <div
+                  *ngIf="!locationcode.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Location Code is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="description"
+                  ngModel
+                  required
+                  #description="ngModel"
+                />
+                <div
+                  *ngIf="!description.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Description is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Primary location Head</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="primarylocationhead"
+                  ngModel
+                  required
+                  #primarylocationhead="ngModel"
+                />
+                <div
+                  *ngIf="!primarylocationhead.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Primary Location Head is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Alternative Location Head</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="alternativelocationhead"
+                  ngModel
+                  required
+                  #alternativelocationhead="ngModel"
+                />
+                <div
+                  *ngIf="!alternativelocationhead.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Alternative Location Head is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <button class="btn btn-light mr-2" type="reset">
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                {{ "forms.submit" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

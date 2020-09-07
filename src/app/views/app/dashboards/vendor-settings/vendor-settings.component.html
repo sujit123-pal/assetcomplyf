@@ -1,0 +1,300 @@
+<div class="row">
+  <div class="col-12">
+    <app-heading></app-heading>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="separator mb-5"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-body">
+        <!--<h5 class="mb-4">{{ 'forms.basic' | translate }}</h5>-->
+        <h5 class="mb-4">Vendor Settings</h5>
+        <form
+          #form="ngForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+          class="tooltip-label-right"
+        >
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Vendor Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="vendorname"
+                  ngModel
+                  required
+                  #vendorname="ngModel"
+                />
+                <div
+                  *ngIf="!vendorname.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Vendor Name is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Contact Person</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="contactperson"
+                  ngModel
+                  required
+                  #contactperson="ngModel"
+                />
+                <div
+                  *ngIf="!contactperson.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Contact Person is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Contact Number</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="contactnumber"
+                  ngModel
+                  required
+                  #contactnumber="ngModel"
+                />
+                <div
+                  *ngIf="!contactnumber.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Contact Number is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Registertion Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="registrationcode"
+                  ngModel
+                  required
+                  #registrationcode="ngModel"
+                />
+                <div
+                  *ngIf="!registrationcode.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Registertion Code is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Address1</label>
+                <textarea
+                  class="form-control"
+                  rows="2"
+                  name="address1"
+                  ngModel
+                  #address1="ngModel"
+                  required
+                ></textarea>
+                <div
+                  *ngIf="!address1.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Address1 is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Address2</label>
+                <textarea
+                  class="form-control"
+                  rows="2"
+                  name="address2"
+                  ngModel
+                  #address2="ngModel"
+                  required
+                ></textarea>
+                <div
+                  *ngIf="!address2.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Address2 is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  ngModel
+                  required
+                  #email="ngModel"
+                />
+                <div
+                  *ngIf="!email.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Email is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="city"
+                  ngModel
+                  required
+                  #city="ngModel"
+                />
+                <div
+                  *ngIf="!city.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  City is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="state"
+                  ngModel
+                  required
+                  #state="ngModel"
+                />
+                <div
+                  *ngIf="!state.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  State is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Postal Code</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="postalcode"
+                  ngModel
+                  required
+                  #postalcode="ngModel"
+                />
+                <div
+                  *ngIf="!postalcode.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Postal Code is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>PAN Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="pan"
+                  ngModel
+                  required
+                  #pan="ngModel"
+                />
+                <div
+                  *ngIf="!pan.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  PAN No is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>CST Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="cst"
+                  ngModel
+                  required
+                  #cst="ngModel"
+                />
+                <div
+                  *ngIf="!cst.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  CST No is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>GST Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="gst"
+                  ngModel
+                  required
+                  #gst="ngModel"
+                />
+                <div
+                  *ngIf="!gst.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  GST No is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Customer</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="customer"
+                  ngModel
+                  required
+                  #customer="ngModel"
+                />
+                <div
+                  *ngIf="!customer.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Customer is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <button class="btn btn-light mr-2" type="reset">
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                {{ "forms.submit" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

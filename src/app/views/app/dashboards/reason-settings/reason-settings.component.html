@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-12">
+    <app-heading></app-heading>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="separator mb-5"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-body">
+        <!--<h5 class="mb-4">{{ 'forms.basic' | translate }}</h5>-->
+        <h5 class="mb-4">Reason</h5>
+        <form
+          #form="ngForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+          class="tooltip-label-right"
+        >
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Reason</label>
+                <textarea
+                  class="form-control"
+                  rows="2"
+                  name="details"
+                  ngModel
+                  #details="ngModel"
+                  required
+                ></textarea>
+                <div
+                  *ngIf="!details.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Reason is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <button class="btn btn-light mr-2" type="reset">
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                {{ "forms.submit" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

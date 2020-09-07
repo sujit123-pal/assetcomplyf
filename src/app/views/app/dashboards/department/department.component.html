@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-12">
+    <app-heading></app-heading>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="separator mb-5"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-body">
+        <!--<h5 class="mb-4">{{ 'forms.basic' | translate }}</h5>-->
+        <h5 class="mb-4">Department</h5>
+        <form
+          #form="ngForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+          class="tooltip-label-right"
+        >
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Department</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="department"
+                  ngModel
+                  required
+                  #department="ngModel"
+                />
+                <div
+                  *ngIf="!department.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Department is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Department Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="departmentcode"
+                  ngModel
+                  required
+                  #departmentcode="ngModel"
+                />
+                <div
+                  *ngIf="!departmentcode.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Department Code is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Contact Person</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="contactperson"
+                  ngModel
+                  required
+                  #contactperson="ngModel"
+                />
+                <div
+                  *ngIf="!contactperson.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Contact Person is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-group error-l-50">
+                <label>Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="description"
+                  ngModel
+                  required
+                  #description="ngModel"
+                />
+                <div
+                  *ngIf="!description.valid && form.submitted"
+                  class="invalid-tooltip"
+                >
+                  Description is required!
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <button class="btn btn-light mr-2" type="reset">
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                {{ "forms.submit" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
