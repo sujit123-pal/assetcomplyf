@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FinalService } from '../services/application-setting/final.service';
 /*
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -23,11 +24,11 @@ export interface IPasswordReset {
 */
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private final:FinalService) {}
 
   registerUrl =
-    'https://assetcomply.thinkagainlab.com/api/v1/user/registration';
-  loginUrl = 'https://assetcomply.thinkagainlab.com/api/v1/user/login';
+    this.final.b+'registration';
+  loginUrl = this.final.b+'login';
 
   register(user) {
     return this.http.post(this.registerUrl, user);

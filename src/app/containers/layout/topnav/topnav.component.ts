@@ -23,7 +23,6 @@ export class TopnavComponent implements OnInit, OnDestroy {
   isFullScreen = false;
   isDarkModeActive = false;
   searchKey = '';
-
   constructor(
     private sidebarService: SidebarService,
     private authService: AuthService,

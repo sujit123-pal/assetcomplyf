@@ -80,5 +80,18 @@
     "ts-node": "~8.10.2",
     "tslint": "~6.1.2",
     "typescript": "~3.9.6"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujit123-pal/assetcomplyf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sujit123-pal/assetcomplyf/issues"
+  },
+  "homepage": "https://github.com/sujit123-pal/assetcomplyf#readme"
 }

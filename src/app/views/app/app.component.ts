@@ -78,9 +78,54 @@ export class AppComponent implements OnInit, OnDestroy {
         ],
       },
       {
-        text: 'This is the end of your tour bro',
+        text: 'lets check Settings!',
         attachTo: {
           element: '#third-element',
+          on: 'bottom'
+        },
+        buttons: [
+          {
+            classes: 'shepherd-button-primary',
+            text: 'Next',
+            type: 'next',
+            action: this.shepherdService.next,
+          },
+        ],
+      },
+      {
+        text: 'Hey! It is your profile!',
+        attachTo: {
+          element: '#fourth-element',
+          on: 'bottom'
+        },
+        buttons: [
+          {
+            classes: 'shepherd-button-primary',
+            text: 'Next',
+            type: 'next',
+            action: this.shepherdService.next,
+          },
+        ],
+      },
+      {
+        text: 'Lets explore the menu',
+        attachTo: {
+          element: '#fifth-element',
+          on: 'right'
+        },
+        buttons: [
+          {
+            classes: 'shepherd-button-primary',
+            text: 'Next',
+            type: 'next',
+            action: this.shepherdService.next,
+          },
+        ],
+      },
+      {
+        text: 'This is the end of your tour bro',
+        attachTo: {
+          element: '#sixth-element',
           on: 'top'
         },
         buttons: [

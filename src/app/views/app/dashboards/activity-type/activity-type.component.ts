@@ -65,6 +65,7 @@ export class ActivityTypeComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.form.value);
     this.form.value.username = localStorage.getItem('usr_name');
     if (this.form.valid) {
       this.atservice.postData(this.form.value).subscribe((data: Response) => {
