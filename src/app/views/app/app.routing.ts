@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BlankPageComponent } from './blank-page/blank-page.component';
 
+
+
 const routes: Routes = [
     {
         path: '', component: AppComponent,

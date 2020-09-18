@@ -36,6 +36,7 @@
         <rect x="0.5" y="15.5" width="25" height="1" />
       </svg>
     </a>
+    
 
     <div class="search" (click)="searchAreaClick($event)">
       <input
@@ -66,6 +67,8 @@
     >
     -->
   </div>
+  
+
 
   <a class="navbar-logo" [routerLink]="adminRoot">
     <span class="logo d-none d-xs-block"></span>
@@ -90,7 +93,19 @@
           <label class="custom-control-label" for="darkModeSwitch"></label>
         </div>
       </div>
-
+       
+      <div class="position-relative d-inline-block" routerLinkActive="active">
+        <div dropdown>
+          <button
+            dropdownToggle
+            type="submit"
+            class="btn btn-primary"
+            routerLink="/app/dashboards/scan"
+          >
+            <i class="iconsminds-qr-code"></i>
+          </button>
+        </div>
+      </div>
       <div class="position-relative d-none d-sm-inline-block" id="fifth-element">
         <div dropdown>
           <button
@@ -139,6 +154,7 @@
           </div>
         </div>
       </div>
+      
 
       <div class="position-relative d-inline-block">
         <div dropdown>
@@ -243,7 +259,7 @@
       </button>
       -->
     </div>
-
+  
     <div class="user d-inline-block" dropdown id="fourth-element">
       <button class="btn btn-empty p-0" type="button" dropdownToggle>
         <span class="name">{{ displayName }}</span>

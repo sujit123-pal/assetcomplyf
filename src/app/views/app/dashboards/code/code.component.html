@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          
+          <h5 class="mb-4">QR Code Generation</h5>
+          <form
+            #form="ngForm"
+            (ngSubmit)="gen(form.value)"
+            novalidate
+            class="tooltip-label-right"
+          >
+            <div class="row">
+              
+              <div class="col-12 col-lg-6">
+                <div class="form-group error-l-50">
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    ngModel
+                    required
+                    #name="ngModel"
+                  />
+                  <div
+                    *ngIf="!name.valid && form.submitted"
+                    class="invalid-tooltip"
+                  >
+                    Name is required!
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="form-group error-l-50">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    ngModel
+                    required
+                    #email="ngModel"
+                  />
+                  <div
+                    *ngIf="!email.valid && form.submitted"
+                    class="invalid-tooltip"
+                  >
+                    Email is required!
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="form-group error-l-50">
+                  <label>Phone Number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="phn"
+                    ngModel
+                    required
+                    #phn="ngModel"
+                  />
+                  <div
+                    *ngIf="!phn.valid && form.submitted"
+                    class="invalid-tooltip"
+                  >
+                    Phone Number is required!
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="form-group error-l-50">
+                  <label>Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    ngModel
+                    required
+                    #address="ngModel"
+                  />
+                  <div
+                    *ngIf="!address.valid && form.submitted"
+                    class="invalid-tooltip"
+                  >
+                    Address is required!
+                  </div>
+                </div>
+              </div>
+                
+              
+              <div class="col-12 mt-2">
+                <ngx-qrcode
+                [elementType]="elementType"
+                [errorCorrectionLevel]="correctionLevel"
+  [value]="result"
+  alt="Demo QR Code"
+  cssClass="bshadow"></ngx-qrcode>
+                <button class="btn btn-light mr-2" type="reset">Cancel</button>
+                <button class="btn btn-primary" type="submit">
+                  Generate
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel" -->

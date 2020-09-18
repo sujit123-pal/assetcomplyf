@@ -95,6 +95,11 @@ const data: IMenuItem[] = [
         label: 'Item Creation',
         to: `${adminRoot}/dashboards/item`,
       },
+       {
+          icon: 'simple-icon-briefcase',
+         label: 'Generate QR Code',
+         to: `${adminRoot}/dashboards/code`,
+        },
     ],
   },
   {

@@ -12,25 +12,30 @@ import { environment } from 'src/environments/environment';
 import { LayoutContainersModule } from './containers/layout/layout.containers.module';
 import { ItemComponent } from './item/item.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { FormsModule } from '@angular/forms';
-import { SimpleNotificationsModule } from 'angular2-notifications'
-
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { ScanComponent } from './scanner/scan/scan.component'
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import {AppUiModule} from 'src/app/scanner/scan/app-ui.module';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 @NgModule({
   imports: [
     BrowserModule,
     ViewsModule,
-    AppRoutingModule,
+    AppRoutingModule,NgxQRCodeModule,
     LayoutContainersModule,
-    BrowserAnimationsModule,NgxDatatableModule,FormsModule,
+    BrowserAnimationsModule,NgxDatatableModule,FormsModule,ReactiveFormsModule,
     TranslateModule.forRoot(),
     HttpClientModule,
+    ZXingScannerModule,AppUiModule,
     SimpleNotificationsModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase)
   ],
   declarations: [
     AppComponent,
     ItemComponent,
+    ScanComponent,
   
   ],
   providers: [],

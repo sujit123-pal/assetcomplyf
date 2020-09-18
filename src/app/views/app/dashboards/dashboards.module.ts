@@ -28,7 +28,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PagesContainersModule } from 'src/app/containers/pages/pages.containers.module';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-
+import { CodeComponent } from './code/code.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 @NgModule({
   declarations: [
@@ -47,10 +48,11 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     UnitComponent,
     AddressComponent,
     StatusComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    CodeComponent,
   ],
   imports: [
-    SharedModule,
+    SharedModule,NgxQRCodeModule,
     LayoutContainersModule,
     DashboardsContainersModule,
     DashboardsRoutingModule,

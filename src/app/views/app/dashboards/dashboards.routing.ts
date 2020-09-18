@@ -17,6 +17,8 @@ import { DepartmentComponent } from './department/department.component';
 import { AddressComponent } from './address/address.component';
 import { StatusComponent } from './status/status.component';
 import {ItemComponent} from '../../../item/item.component';
+import { ScanComponent } from 'src/app/scanner/scan/scan.component';
+import { CodeComponent } from './code/code.component';
 const routes: Routes = [
   {
     path: '',
@@ -42,6 +44,9 @@ const routes: Routes = [
       { path: 'address', component: AddressComponent },
       { path: 'status', component: StatusComponent },
       { path: 'item', component: ItemComponent },
+      { path: 'scan', component: ScanComponent },
+      { path: 'code', component: CodeComponent },
+      
     ],
   },
 ];

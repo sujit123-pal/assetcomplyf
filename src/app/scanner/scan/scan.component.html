@@ -1,0 +1,82 @@
+<div class="scanner-shell" [hidden]="!hasDevices">
+
+  <mat-menu #appMenu="matMenu">
+    <mat-selection-list>
+      <mat-list-option checkboxPosition="start" (click)="toggleTorch()" [selected]="torchEnabled"
+        *ngIf="torchAvailable$ | async">
+        Enable Torch
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-menu>
+
+  <header>
+    <mat-form-field appearance="fill">
+      <select matNativeControl matInput (change)="onDeviceSelectChange($event.target.value)">
+        <option value="" [selected]="!currentDevice">No Device Selected</option>
+        <option *ngFor="let device of availableDevices" [value]="device.deviceId"
+          [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{device.label}}</option>
+      </select>
+    </mat-form-field>
+  </header>
+
+  <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)" (permissionResponse)="onHasPermission($event)"
+    (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="clearResult()">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="form-group error-l-50">
+    <label>Name</label><br>
+    <input type="text" formControlName="name" value={{result[0]}}><br><br>
+    </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="form-group error-l-50">
+    <label>Email</label><br>
+    <input type="text" formControlName="Email" value={{result[1]}}><br><br>
+    </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="form-group error-l-50">
+    <label>Phone Number</label><br>
+    <input type="text" formControlName="phone_number" value={{result[2]}}><br><br>
+    </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="form-group error-l-50">
+    <label>Address</label><br> 
+    <input type="text" formControlName="Adress" value={{result[3]}}><br><br>
+    </div>
+    </div>
+    <!-- <div class="col-12 col-lg-6">
+      <div class="form-group error-l-50">
+    <label>Country</label><br> 
+    <input type="text" formControlName="Country" value={{result[4]}}><br><br>
+    </div>
+    </div> -->
+  
+  </div>
+    <button type="reset" class="btn btn-primary">Clear All</button>
+    
+  </form>
+
+ 
+    
+
+
+
+
+
+<br><br><br>
+<ng-container *ngIf="hasDevices === undefined">
+
+  <h2>Couldn't check for devices.</h2>
+
+</ng-container>
+
+<ng-container *ngIf="hasDevices === false">
+
+  <h2>No camera was found.</h2>
+
+</ng-container>

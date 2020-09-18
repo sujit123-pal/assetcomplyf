@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
       (err) => {
         this.notifications.create(
           'Error',
-          'Registrayion failed, due to unknown error.',
+          'Registration failed, due to unknown error.',
           NotificationType.Error,
           { theClass: 'outline danger', timeOut: 6000, showProgressBar: false }
         );
